@@ -1,0 +1,37 @@
+<span class="label label-info">{{data.category}}</span> <span class="label label-primary">{{data.type}}</span> 
+<span class="pull-right"><i class="fa fa-calendar"></i>&nbsp;{{data.creationDate|date:"dd/MM/yyyy"}}</span>
+
+<h2 class="sub-header">{{data.title}}</h2>
+<p class="well" ng-show="data.votosAFavor>0 || data.votosEnContra>0">
+ <span ng-show="data.votosAFavor>0">Votos a favor <i class="fa fa-thumbs-up text-success"></i> {{data.votosAFavor}}</span> 
+ <span ng-show="data.votosEnContra>0">Votos en contra <i class="fa fa-thumbs-down text-danger"></i> {{data.votosEnContra}}</span>
+</p>
+<p ng-bind-html="data.description"></p>
+<div ng-show="data.totalCount>0">
+<hr>
+<h4>Aportaciones</h4>
+<br>
+<div class="row comment" ng-repeat="comment in data.result">
+	<div class="col-sm-1">
+		<div class="thumbnail">
+		<img class="img-responsive user-photo" src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png">
+		</div><!-- /thumbnail -->
+		</div><!-- /col-sm-1 -->
+
+		<div class="col-sm-11">
+		<div class="panel panel-default">
+		<div class="panel-heading">
+		<strong ng-bind-html="comment.username"></strong> <span class="text-muted"><i class="fa fa-calendar"></i>&nbsp;{{comment.creationDate|date:"dd/MM/yyyy"}}</span>
+		</div>
+		<div class="panel-body">
+
+			<p class="well" ng-show="comment.votosAFavor>0 || comment.votosEnContra>0">
+			 <span ng-show="comment.votosAFavor>0">Votos a favor <i class="fa fa-thumbs-up text-success"></i> {{comment.votosAFavor}}</span> 
+			 <span ng-show="comment.votosEnContra>0">Votos en contra <i class="fa fa-thumbs-down text-danger"></i> {{comment.votosEnContra}}</span>
+			</p>
+
+		    <p ng-bind-html="comment.comment"></p>
+		</div><!-- /panel-body -->
+	</div><!-- /panel panel-default -->
+</div><!-- /col-sm-5 -->
+</div>

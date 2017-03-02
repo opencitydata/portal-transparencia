@@ -1,0 +1,7 @@
+<div class="item-header">
+  <span class="text-info">{{item.title}}</span>&nbsp;&nbsp; 
+  <span ng-show="item.votosAFavor>0"><i class="fa fa-thumbs-up text-success"></i> {{item.votosAFavor}}</span> 
+  <span ng-show="item.votosEnContra>0"><i class="fa fa-thumbs-down text-danger"></i> {{item.votosEnContra}}</span> 
+  &nbsp;&nbsp;<small><i class="fa fa-calendar"></i>&nbsp;{{item.creationDate|date:"dd/MM/yyyy"}}</small>
+</div>
+<span ng-bind-html="htmlToPlaintext(item.description)|characters:300"></span>

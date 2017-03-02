@@ -1,0 +1,55 @@
+<div ng-include="headerTemplate">
+
+</div>
+
+<div class="well"><i class="fa fa-question-circle"></i> Consulta nuestra página de ayuda sobre esta sección <a href="#/ayuda">aquí</a></div>
+
+<div class="row data" ng-show="loaded && !data.error">
+
+	<div class="col-sm-12">
+
+            <div class="panel panel-danger">
+                <div class="panel-heading">
+                    <a href="#/datos/{{currentRoute}}" class="pull-right">Volver al listado</a>
+                    <h3 class="panel-title">
+                        Mostrando elemento {{itemId}}
+                    </h3>
+                </div>
+
+                <div class="panel-body">
+
+                    <div ng-include="showTemplate">
+
+                    </div>
+
+                    <h4>Compartir este enlace</h4>
+                    <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{link}}"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+                    <a target="_blank" href="https://twitter.com/home?status={{link}}"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+                    <a target="_blank" href="https://plus.google.com/share?url={{link}}"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+
+                </div>
+                <div class="panel-footer">
+                   <a href="#/datos/{{currentRoute}}" class="btn btn-default">Volver al listado</a>
+                </div>
+            </div>
+
+	</div>
+
+</div>
+
+
+<div class="row" ng-show="!loaded">
+
+<center>
+<h1><i class="fa fa-spinner fa-spin"></i> Cargando datos</h1>
+</center>
+
+</div>
+
+<div class="row" ng-show="data.error && loaded">
+
+<center>
+<h1><i class="fa fa-exclamation-triangle"></i> Ups... algo no ha pasado como debería, disculpa las molestias.</h1>
+</center>
+
+</div>

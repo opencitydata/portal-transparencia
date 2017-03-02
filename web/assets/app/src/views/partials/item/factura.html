@@ -1,0 +1,10 @@
+<div class="item-header">
+  <!--<span class="label" ng-class="{'label-success':item.status=='Pagada','label-danger':item.status!='Pagada'}">{{item.status}}</span>-->
+  <span class="text-info">{{item.title}}</span>&nbsp;&nbsp; 
+  <span class="text-danger">- {{item.amount}}€</span>&nbsp;&nbsp;
+  <small><i class="fa fa-calendar"></i>&nbsp;{{item.issued|date:"dd/MM/yyyy"}}</small>
+</div>
+
+<p>
+  Emitida por {{item.tercero.title}} para {{item.entidad.title}}
+</p>

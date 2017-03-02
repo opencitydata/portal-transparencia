@@ -1,0 +1,28 @@
+<span class="label label-info">{{data.rango.title}}</span> <a class="pull-right" href="{{data.link}}">Ver fuente <i class="fa fa-external-link"></i></a>
+<h2 class="sub-header">{{data.title}}</h2>
+<p ng-bind-html="data.text"></p>
+
+<div ng-show="data.publicacionFinal.fecha">
+  <h4>Publicación final</h4>
+  <i class="fa fa-calendar"></i>&nbsp;{{data.publicacionFinal.fecha|date:"dd/MM/yyyy"}} 
+</div>
+
+<div ng-show="data.aprobacionFinal.fecha">
+  <h4>Aprobación final</h4>
+  <i class="fa fa-calendar"></i>&nbsp;{{data.aprobacionFinal.fecha|date:"dd/MM/yyyy"}} 
+</div>
+<hr>
+
+<div ng-show="data.comment">
+	<h4>Comentarios</h4>
+	<div ng-bind-html="data.comment">
+	</div>
+	<hr>
+</div>
+
+<div ng-show="data.observation">
+	<h4>Observaciones</h4>
+	<div ng-bind-html="data.observation">
+	</div>
+	<hr>
+</div>
