@@ -1,0 +1,5 @@
+<div class="item-header">
+  <span class="text-info">{{htmlToPlaintext(item.title)}}</span>&nbsp;&nbsp; 
+  <small><i class="fa fa-calendar"></i>&nbsp;{{item.pubDate|date:"dd/MM/yyyy"}}</small>
+</div>
+<span ng-bind-html="htmlToPlaintext(item.noticia)|characters:300"></span>

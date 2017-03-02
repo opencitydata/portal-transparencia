@@ -1,0 +1,57 @@
+<div ng-include="headerTemplate">
+
+</div>
+
+<div class="well"><i class="fa fa-question-circle"></i> Consulta nuestra página de ayuda sobre esta sección <a href="#/ayuda">aquí</a></div>
+
+<div class="row data" ng-show="loaded">
+
+	<div class="col-sm-12">
+
+            <div class="input-group m-b-sm">
+                <input type="text" ng-model="newSearch" class="form-control" placeholder="Buscar" />
+                <span class="input-group-btn">
+                     <button class="btn btn-danger" type="button" ng-click="search()">
+                          <span class=" glyphicon glyphicon-search"></span>&nbsp;Buscar
+                      </button>
+                </span>
+            </div>
+            
+            <div ng-show="!data.result">
+              <div class="alert alert-warning">
+
+                No se han encontrado resultados
+
+              </div>
+            </div>
+
+            <div class="panel panel-danger" ng-show="data.result.length>0">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Mostrando {{data.rows+data.start}} de {{data.totalCount}} resultados <span ng-show"searchTerm.length=!0 && loaded">con la búsqueda {{searchTerm}}</span></h3>
+                </div>
+                <ul class="list-group">
+                    <a ng-repeat="item in data.result" href="#/dato/{{currentRoute}}/{{item.id}}" class="list-group-item">
+                        <div ng-include="itemTemplate"></div>
+                    </a>
+                </ul>
+
+            </div>
+
+			<ul class="pagination">
+              <li><a ng-click="goToPage(0)" href=""><i class="fa fa-step-backward"></i></a></li>
+			  <li ng-repeat="i in pagination" ng-class="{active:i==page}"><a ng-click="goToPage(i)" href="">{{i+1}}</a></li>
+			  <li><a ng-click="goToPage(lastPage)" href=""><i class="fa fa-step-forward"></i></a></li>
+			</ul>
+
+	</div>
+
+</div>
+
+<div class="row" ng-show="!loaded">
+
+<center>
+<h1><i class="fa fa-spinner fa-spin"></i> Cargando datos</h1>
+</center>
+
+</div>

@@ -1,0 +1,4 @@
+<div class="item-header">
+  <small>Aprobación final <i class="fa fa-calendar"></i>&nbsp;{{item.aprobacionFinal.fecha|date:"dd/MM/yyyy"}} por <span class="text-info">{{item.aprobacionFinal.title}}</span></small>
+</div>
+<a target="_blank" href="{{item.link}}"><span class="label label-info"><i class="fa fa-external-link"></i> Enlace</span></a>&nbsp;&nbsp;<span ng-bind-html="htmlToPlaintext(item.title)|characters:300"></span>

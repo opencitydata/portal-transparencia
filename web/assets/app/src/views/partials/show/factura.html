@@ -1,0 +1,11 @@
+<span class="label" ng-class="{'label-success':data.status=='Pagada','label-danger':data.status!='Pagada'}">{{data.status}}</span>
+<span class="pull-right">&nbsp;&nbsp;Emitida el <i class="fa fa-calendar"></i>&nbsp;{{data.issued|date:"dd/MM/yyyy"}}</span>
+<span ng-show="data.payment" class="pull-right">Pagada el <i class="fa fa-calendar"></i>&nbsp;{{data.payment|date:"dd/MM/yyyy"}}</span>
+
+<h2 class="sub-header">{{data.title}}</h2>
+<h4>Cantidad</h4>
+<i class="fa fa-money"></i> {{data.amount}} €
+<h4>Emitida por (tercero)</h4>
+{{data.tercero.title}}
+<h4>Emitida a (entidad)</h4>
+{{data.entidad.title}}
